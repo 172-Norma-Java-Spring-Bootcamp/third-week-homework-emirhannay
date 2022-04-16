@@ -30,7 +30,7 @@ public class WeatherForecastController {
     @GetMapping("/getWeatherForecast/{cityName}/{day}")
     public ResponseEntity<Response> getWeatherForecastData(@PathVariable("cityName") String cityName,
                                                                   @Min(value = 1, message = "Gün bilgisi 1'den az olamaz")
-                                                                  @Max(value = 3, message = "Gün bilgisi 3'den büyük olamaz")
+                                                                  @Max(value = 3, message = "Gün bilgisi 3'ten büyük olamaz")
                                                                   @PathVariable("day") int day){
 
         return new ResponseEntity<Response>(weatherForecastService.getWeatherForecast(cityName,day),HttpStatus.OK);
