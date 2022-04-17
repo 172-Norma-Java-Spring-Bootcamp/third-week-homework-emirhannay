@@ -1,13 +1,9 @@
 package com.emirhan.weatherforecast.business;
 
-
 import com.emirhan.weatherforecast.model.WeatherApiData;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
 
 
 @Service
@@ -15,12 +11,10 @@ import org.springframework.web.client.RestTemplate;
 //It takes the required data I want from the api and returns
 public class WeatherForecastApiAdaptorImpl implements WeatherForecastApiAdaptor {
 
-    RestTemplate restTemplate;
+    private final RestTemplate restTemplate;
 
-    @Autowired
     public WeatherForecastApiAdaptorImpl(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
-
     }
 
     @Override

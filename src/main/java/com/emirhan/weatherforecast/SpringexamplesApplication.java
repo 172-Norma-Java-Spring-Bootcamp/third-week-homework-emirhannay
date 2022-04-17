@@ -12,10 +12,7 @@ public class SpringexamplesApplication {
         SpringApplication.run(SpringexamplesApplication.class, args);
     }
 
-    @Bean
-    public RestTemplate restTemplate(){
-        return new RestTemplate();
-    }
+
 
 }
 

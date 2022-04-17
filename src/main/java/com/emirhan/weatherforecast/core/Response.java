@@ -1,6 +1,5 @@
 package com.emirhan.weatherforecast.core;
 
-import com.emirhan.weatherforecast.core.Data;
 import lombok.Getter;
 import lombok.Setter;
 
