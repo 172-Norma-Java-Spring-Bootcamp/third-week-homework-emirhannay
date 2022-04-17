@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 import javax.validation.ConstraintViolationException;
 
@@ -23,6 +24,12 @@ public class RestServiceControllerAdvice extends ResponseEntityExceptionHandler 
     public ResponseEntity<Object> handleHttpClientErrorExceptionError(HttpClientErrorException e) {
         return ResponseEntity.badRequest().body(e.getMessage());
     }
+    @ExceptionHandler(RestClientException.class)
+    public ResponseEntity<Object> handleRestClientException(RestClientException e) {
+        return ResponseEntity.badRequest().body(e.getMessage());
+    }
+
+
 
 
 
